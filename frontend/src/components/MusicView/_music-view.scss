@@ -1,0 +1,158 @@
+$md: 768px;
+
+@-webkit-keyframes animate-stripes {
+  100% {
+    background-position: -100px 0px;
+  }
+}
+
+@keyframes animate-stripes {
+  100% {
+    background-position: -100px 0px;
+  }
+}
+.media-player__music-player {
+  &__music-view {
+    border: 1 solid transparent;
+    &__container {
+      hr {
+        width: 100%;
+        color: #979797;
+        opacity: 0.5;
+      }
+      padding: 17px;
+
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18),
+        0 1px 2px 0 rgba(0, 0, 0, 0.04), 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+      background-color: #ffffff;
+      &__album {
+        height: 100px;
+        margin-right: 0;
+        border-radius: 4px;
+        background: rgb(49, 4, 99);
+        background: linear-gradient(
+          131deg,
+          rgba(49, 4, 99, 1) 0%,
+          rgba(100, 9, 121, 1) 35%,
+          rgba(128, 93, 200, 1) 97%
+        );
+      }
+      &__track-info {
+        &__idle-warning {
+          color: #999999;
+          font-style: italic;
+          font-weight: bold;
+        }
+        &__title {
+          font-size: 22px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: 0.32px;
+          color: #000000;
+          line-height: 1.33;
+        }
+        &__subtitle {
+          font-size: 15px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.33;
+          letter-spacing: -0.24px;
+          color: #999999;
+        }
+        &__progress-bar {
+          &:hover {
+            cursor: pointer;
+          }
+          &[value] {
+            -webkit-animation: animate-stripes 5s linear infinite;
+            animation: animate-stripes 5s linear infinite;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            &::-webkit-progress-value {
+              background-color: #6c3483;
+            }
+            &::-webkit-progress-bar {
+              background-color: #979797;
+              height: 3px;
+            }
+          }
+          width: 100%;
+          margin-top: 16px;
+        }
+        &__timing {
+          display: flex;
+          &__minutes {
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.2px;
+            color: #000000;
+          }
+          &__seconds {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.2px;
+            color: #000000;
+          }
+        }
+      }
+
+      &__controls {
+        display: flex;
+        :hover {
+          cursor: pointer;
+        }
+
+        &__play {
+          &:disabled {
+            background-color: #d6dbdf;
+            cursor: auto;
+          }
+          width: 100%;
+          height: 44px;
+          border-radius: 8px;
+          border: 0 solid transparent;
+          margin-right: 50px;
+          background-color: #f6ebfe;
+        }
+        &__pause {
+          &:disabled {
+            background-color: #d6dbdf;
+            cursor: auto;
+          }
+          width: 100%;
+          height: 44px;
+          border-radius: 8px;
+          border: 0 solid transparent;
+
+          background-color: #f6ebfe;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $md) {
+  .media-player__music-player {
+    &__music-view {
+      &__container {
+        &__controls {
+          &__play {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

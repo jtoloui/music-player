@@ -1,0 +1,11 @@
+{
+	"env": {
+		"MONGO_USER": "fetch_data",
+		"MONGO_PW": "Track_DB-Connect",
+		"MONGO_DB": "media-player",
+		"pws": "Logo1234!",
+		"user": "admin",
+		"PORT": 3001,
+		"NODE_ENV": "development"
+	}
+}

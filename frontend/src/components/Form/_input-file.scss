@@ -1,0 +1,54 @@
+$sm: 576px;
+$md: 768px;
+
+.media-player__form__file-input {
+  display: inline-block;
+  text-align: left;
+  background: #fff;
+  max-width: 280px;
+  margin: 0 10px;
+  margin-bottom: 70px;
+  position: relative;
+  border-radius: 3px;
+  > [type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+  > .button {
+    margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+    background: #eee;
+    padding: 8px 16px;
+    border-radius: 2px;
+    margin-right: 8px;
+  }
+  &:hover > .button {
+    background: #a237f3;
+    color: white;
+  }
+  > .label {
+    flex-wrap: wrap;
+    color: #333;
+
+    opacity: 0.3;
+  }
+  &.-chosen > .label {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: $md) {
+  .media-player__form__file-input {
+    margin-top: 20px;
+    > .button {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+$sm: 576px;
+$md: 768px;
+
+.media-player__form__input {
+  margin: 0 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &__text + &__error-message {
+    margin-bottom: 40px;
+    color: #a237f3;
+  }
+  :not(.media-player__form__input__input, .media-player__form__input__error-message) {
+    margin-bottom: 40px;
+  }
+  &__text {
+    margin: 10px 0 0 0;
+    background: #fff;
+    color: #525865;
+    border-radius: 2px;
+    border: 1px solid #d1d1d1;
+    box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.07);
+    font-family: inherit;
+    font-size: 1em;
+    outline: none;
+    padding: 0.6em 1.45em 0.7em;
+    -webkit-transition: 0.18s ease-out;
+    -moz-transition: 0.18s ease-out;
+    -o-transition: 0.18s ease-out;
+    transition: 0.18s ease-out;
+    &:hover {
+      box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    &:focus {
+      color: #4b515d;
+      border: 1px solid #b8b6b6;
+      box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01),
+        0px 0px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+  &__label {
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: -0.29px;
+    color: #999999;
+  }
+}
+
+@media (max-width: $md) {
+  .media-player__form__input {
+    &__text + &__error-message {
+      margin-bottom: 20px;
+    }
+    &__error-message {
+      text-align: left;
+      font-size: 14px;
+    }
+    :not(.media-player__form__input__input, .media-player__form__input__error-message) {
+      margin-bottom: 20px;
+    }
+    &__text {
+      width: 125px;
+    }
+    &__label {
+      font-size: 14px;
+    }
+  }
+}

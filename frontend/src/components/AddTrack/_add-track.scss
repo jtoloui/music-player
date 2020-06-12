@@ -1,0 +1,25 @@
+$md: 768px;
+.media-player__add-track {
+  display: flex;
+  align-items: center;
+  &__button {
+    margin-left: 15px;
+    width: 48px;
+    height: 48px;
+    outline: none;
+    background-color: #f6ebfe;
+    border-radius: 50%;
+    border: 0 solid #f6ebfe;
+    #add-button {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: $md) {
+  .media-player__add-track {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,14 @@
+$md: 768px;
+
+.music-player__filter {
+  display: flex;
+  margin-right: 25px;
+}
+
+@media screen and (max-width: $md) {
+  .music-player__filter {
+    margin-top: 1rem;
+    min-width: 100%;
+    flex: auto;
+  }
+}
