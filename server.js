@@ -25,7 +25,7 @@ app.use(logger("dev"));
 app.use(cors());
 app.use(timeout("25s"));
 app.use(express.urlencoded({ extended: true }));
-// middleware security 
+// middleware security
 app.use(helmet.xssFilter());
 app.use(helmet.frameguard());
 
@@ -40,6 +40,10 @@ app.use("/api/track", trackRoute);
 app.use(express.static(path.join(__dirname, "build")));
 app.get("/", (req, res) => {
 	res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+app.get("*", (req, res) => {
+	const index = path.join(__dirname, "build", "index.html");
+	res.sendFile(index);
 });
 
 // catch 404 and forward to error handler

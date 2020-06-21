@@ -7,11 +7,12 @@
 		"start-local": "run-p server app",
 		"start-prod": "run-p  build-prod test",
 		"test": "node ./server.js",
+		"start": "node server.js",
 		"server": "node-env-run ./server.js --exec nodemon",
 		"app": "cd ./frontend/ && npm run start",
 		"build-prod": "cd ./frontend/ && npm run build && cp -R build ../",
 		"prod-build": " serve -s ./frontend/build -l 3000",
-		"heroku-postbuild": "cd frontend && npm install && npm install --only=dev --no-shrinkwrap && npm run build && cd .. && npm run start-prod"
+		"heroku-postbuild": "cd frontend && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
 	},
 	"keywords": [],
 	"author": "",
