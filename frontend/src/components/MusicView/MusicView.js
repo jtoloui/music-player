@@ -51,7 +51,8 @@ function MusicView({ title, album }) {
 	const audioProgressBar = document.querySelector("progress");
 	// attach event for seek audio
 	useEffect(() => {
-		audioProgressBar && audioProgressBar.addEventListener("click", audioSeek);
+		audioProgressBar &&
+			audioProgressBar.addEventListener("click", audioSeek);
 	}, [audioProgressBar]);
 	useEffect(() => {
 		audioTrack.current.onloadedmetadata = (e) => {
@@ -80,7 +81,8 @@ function MusicView({ title, album }) {
 	function audioSeek(e) {
 		const percent = e.offsetX / this.offsetWidth;
 		if (audioTrack.current.currentTime > 0) {
-			audioTrack.current.currentTime = percent * audioTrack.current.duration;
+			audioTrack.current.currentTime =
+				percent * audioTrack.current.duration;
 			progressBar.current.value = percent / 100;
 		}
 	}
@@ -142,18 +144,20 @@ function MusicView({ title, album }) {
 									id="audio-progress"
 									value={audioTime}
 									max={
-										state.currentTrack.duration && state.currentTrack.duration
+										state.currentTrack.duration &&
+										state.currentTrack.duration
 									}
 								/>
 								<audio
 									className="media-player__music-player__music-view__container__track-info__audio"
 									src={
 										state.currentTrack.fileLocation &&
-										`http://localhost:3001/${state.currentTrack.fileLocation}`
+										`https://jtoloui-testing.herokuapp.com/${state.currentTrack.fileLocation}`
 									}
 									ref={audioTrack}
 									type={
-										state.currentTrack.fileType && state.currentTrack.fileType
+										state.currentTrack.fileType &&
+										state.currentTrack.fileType
 									}
 								/>
 							</Grid>
@@ -171,8 +175,8 @@ function MusicView({ title, album }) {
 							</div>
 							{showIdleWarning && (
 								<div className="media-player__music-player__music-view__container__track-info__idle-warning">
-									You have been idle for 30 seconds or longer so we have just
-									paused your track for you
+									You have been idle for 30 seconds or longer
+									so we have just paused your track for you
 								</div>
 							)}
 						</div>
@@ -185,7 +189,10 @@ function MusicView({ title, album }) {
 								className="media-player__music-player__music-view__container__controls__play"
 								onClick={() => playMusic()}
 							>
-								<FontAwesomeIcon icon={faPlay} color={playIconColour} />
+								<FontAwesomeIcon
+									icon={faPlay}
+									color={playIconColour}
+								/>
 							</button>
 
 							<button
@@ -193,7 +200,10 @@ function MusicView({ title, album }) {
 								className="media-player__music-player__music-view__container__controls__pause"
 								onClick={() => pauseMusic()}
 							>
-								<FontAwesomeIcon icon={faPause} color={pauseIconColour} />
+								<FontAwesomeIcon
+									icon={faPause}
+									color={pauseIconColour}
+								/>
 							</button>
 							<IdleTimer
 								ref={idleTimerRef}

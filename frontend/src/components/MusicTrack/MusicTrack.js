@@ -35,7 +35,9 @@ const MusicTrack = ({ title, album, ...props }) => {
 
 	const removeTrack = (trackId) => {
 		axios
-			.delete(`http://localhost:3001/api/track/${trackId}`)
+			.delete(
+				`https://jtoloui-testing.herokuapp.com/api/track/${trackId}`
+			)
 			.then((res) => {
 				dispatch({ type: "NOT-SYNCED" });
 			})

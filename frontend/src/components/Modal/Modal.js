@@ -22,9 +22,13 @@ const Modal = ({ onDismiss }) => {
 		bodyFormData.set("album", data.album);
 		bodyFormData.append("track", data.track[0]);
 		axios
-			.post("http://localhost:3001/api/track", bodyFormData, {
-				headers: { "Content-Type": "multipart/form-data" },
-			})
+			.post(
+				"https://jtoloui-testing.herokuapp.com/api/track",
+				bodyFormData,
+				{
+					headers: { "Content-Type": "multipart/form-data" },
+				}
+			)
 			.then((res) => {
 				dispatch({ type: "NOT-SYNCED" });
 				onDismiss();
