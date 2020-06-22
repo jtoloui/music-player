@@ -152,7 +152,7 @@ function MusicView({ title, album }) {
 									className="media-player__music-player__music-view__container__track-info__audio"
 									src={
 										state.currentTrack.fileLocation &&
-										`https://jtoloui-testing.herokuapp.com/${state.currentTrack.fileLocation}`
+										`https://jt-music-player.herokuapp.com/${state.currentTrack.fileLocation}`
 									}
 									ref={audioTrack}
 									type={

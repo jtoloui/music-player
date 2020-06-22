@@ -23,7 +23,7 @@ const Modal = ({ onDismiss }) => {
 		bodyFormData.append("track", data.track[0]);
 		axios
 			.post(
-				"https://jtoloui-testing.herokuapp.com/api/track",
+				"https://jt-music-player.herokuapp.com/api/track",
 				bodyFormData,
 				{
 					headers: { "Content-Type": "multipart/form-data" },

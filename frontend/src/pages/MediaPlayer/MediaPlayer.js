@@ -33,7 +33,7 @@ const MediaPlayer = () => {
 	useEffect(() => {
 		if (state.status === "out-of-sync") {
 			axios
-				.get("https://jtoloui-testing.herokuapp.com/api/track")
+				.get("https://jt-music-player.herokuapp.com/api/track")
 				.then(({ data }) => {
 					dispatch({ type: "START" });
 					dispatch({ type: "EMPTY_TRACKS" });
